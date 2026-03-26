@@ -8,6 +8,7 @@ class SchoolModelTest:
 
   import SchoolModel.*
   val school: SchoolModule = BasicSchoolModule
+  val basicSchoolModule: BasicSchoolModule.SchoolObj = BasicSchoolModule.SchoolObj(Sequence.Nil(), Sequence.Nil(), Sequence.Nil())
 
   @Test def testEmptySchool() =
-    assertEquals(school.emptySchool, BasicSchoolModule.SchoolObj(Sequence.Nil(), Sequence.Nil(), Sequence.Nil()))
+    assertEquals(school.emptySchool, basicSchoolModule)
