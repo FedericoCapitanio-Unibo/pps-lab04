@@ -115,17 +115,18 @@ object SchoolModel:
       def hasCourse(name: String): Boolean
   object BasicSchoolModule extends SchoolModule:
 
-    case class SchoolObj(teachers: Sequence[Teacher], courses: Sequence[Course], teacherToCourses: Sequence[(Teacher, Course)])
+    case class CourseObj(name: String)
+    case class TeacherObj(name: String)
+    case class SchoolObj(teachers: Sequence[TeacherObj], courses: Sequence[CourseObj], teacherToCourses: Sequence[(TeacherObj, CourseObj)])
 
     override type School = SchoolObj
-    override type Teacher = Nothing
-    override type Course = Nothing
+    override type Teacher = TeacherObj
+    override type Course = CourseObj
 
-
-    def teacher(name: String): Teacher = ???
-    def course(name: String): Course = ???
+    def teacher(name: String): Teacher = TeacherObj(name)
+    def course(name: String): Course = CourseObj(name)
     def emptySchool: School = SchoolObj(Sequence.Nil(), Sequence.Nil(), Sequence.Nil())
-
+    
     extension (school: School)
       def courses: Sequence[String] = ???
       def teachers: Sequence[String] = ???
