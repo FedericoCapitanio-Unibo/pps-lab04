@@ -35,7 +35,7 @@ object Ex1ComplexNumbers:
       def subtract(other: Complex): Complex = (complex, other) match
         case (ComplexNumber(re, im), ComplexNumber(re2, im2)) => ComplexNumber(re - re2, im - im2)
       def asString(): String = complex match
-        case ComplexNumber(0, 0) => "" + 0.0
+        // case ComplexNumber(0, 0) => "" + 0.0
         case ComplexNumber(re, 0) => "" + re
         case ComplexNumber(0, im) => "" + im + "i"
         case ComplexNumber(re, im) => "" + re + (if im > 0 then " + " else "") + (if im > 0 then im else " - " + (-im)) + "i"
